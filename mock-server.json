@@ -1,0 +1,379 @@
+{
+  "restaurants": [
+    {
+      "id": "1",
+      "name": "Velvet & Vine",
+      "shortDescription": "A fine dining experience with a modern twist.",
+      "cuisine": "French",
+      "rating": 4.7,
+      "details": {
+        "id": 1,
+        "address": "123 Fine St, London",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 4.7,
+        "contactEmail": "info@gourmetkitchen.com"
+      }
+    },
+    {
+      "id": "2",
+      "name": "Sushi Paradise",
+      "shortDescription": "Traditional sushi and modern fusion rolls.",
+      "cuisine": "Japanese",
+      "rating": 4.5,
+      "details": {
+        "id": 2,
+        "address": "456 Sushi Ave, London",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 4.5,
+        "contactEmail": "contact@sushiparadise.com"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Restaurant 3",
+      "shortDescription": "Description for Restaurant 3.",
+      "cuisine": "Cuisine Type",
+      "rating": 3.0,
+      "details": {
+        "id": 3,
+        "address": "3 Address St, City",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 3.0,
+        "contactEmail": "contact@restaurant3.com"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Restaurant 4",
+      "shortDescription": "Description for Restaurant 4.",
+      "cuisine": "Cuisine Type",
+      "rating": 3.1,
+      "details": {
+        "id": 4,
+        "address": "4 Address St, City",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 3.1,
+        "contactEmail": "contact@restaurant4.com"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Restaurant 5",
+      "shortDescription": "Description for Restaurant 5.",
+      "cuisine": "Cuisine Type",
+      "rating": 3.2,
+      "details": {
+        "id": 5,
+        "address": "5 Address St, City",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 3.2,
+        "contactEmail": "contact@restaurant5.com"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Restaurant 6",
+      "shortDescription": "Description for Restaurant 6.",
+      "cuisine": "Cuisine Type",
+      "rating": 3.3,
+      "details": {
+        "id": 6,
+        "address": "6 Address St, City",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 3.3,
+        "contactEmail": "contact@restaurant6.com"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Restaurant 7",
+      "shortDescription": "Description for Restaurant 7.",
+      "cuisine": "Cuisine Type",
+      "rating": 3.4,
+      "details": {
+        "id": 7,
+        "address": "7 Address St, City",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 3.4,
+        "contactEmail": "contact@restaurant7.com"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Restaurant 8",
+      "shortDescription": "Description for Restaurant 8.",
+      "cuisine": "Cuisine Type",
+      "rating": 3.5,
+      "details": {
+        "id": 8,
+        "address": "8 Address St, City",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 3.5,
+        "contactEmail": "contact@restaurant8.com"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Restaurant 9",
+      "shortDescription": "Description for Restaurant 9.",
+      "cuisine": "Cuisine Type",
+      "rating": 3.6,
+      "details": {
+        "id": 9,
+        "address": "9 Address St, City",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 3.6,
+        "contactEmail": "contact@restaurant9.com"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Restaurant 10",
+      "shortDescription": "Description for Restaurant 10.",
+      "cuisine": "Cuisine Type",
+      "rating": 3.7,
+      "details": {
+        "id": 10,
+        "address": "10 Address St, City",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 3.7,
+        "contactEmail": "contact@restaurant10.com"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Restaurant 11",
+      "shortDescription": "Description for Restaurant 11.",
+      "cuisine": "Cuisine Type",
+      "rating": 3.8,
+      "details": {
+        "id": 11,
+        "address": "11 Address St, City",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 3.8,
+        "contactEmail": "contact@restaurant11.com"
+      }
+    },
+    {
+      "id": 12,
+      "name": "Restaurant 12",
+      "shortDescription": "Description for Restaurant 12.",
+      "cuisine": "Cuisine Type",
+      "rating": 3.9,
+      "details": {
+        "id": 12,
+        "address": "12 Address St, City",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 3.9,
+        "contactEmail": "contact@restaurant12.com"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Restaurant 13",
+      "shortDescription": "Description for Restaurant 13.",
+      "cuisine": "Cuisine Type",
+      "rating": 4.0,
+      "details": {
+        "id": 13,
+        "address": "13 Address St, City",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 4.0,
+        "contactEmail": "contact@restaurant13.com"
+      }
+    },
+    {
+      "id": 14,
+      "name": "Restaurant 14",
+      "shortDescription": "Description for Restaurant 14.",
+      "cuisine": "Cuisine Type",
+      "rating": 4.1,
+      "details": {
+        "id": 14,
+        "address": "14 Address St, City",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 4.1,
+        "contactEmail": "contact@restaurant14.com"
+      }
+    },
+    {
+      "id": 15,
+      "name": "Restaurant 15",
+      "shortDescription": "Description for Restaurant 15.",
+      "cuisine": "Cuisine Type",
+      "rating": 4.2,
+      "details": {
+        "id": 15,
+        "address": "15 Address St, City",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 4.2,
+        "contactEmail": "contact@restaurant15.com"
+      }
+    },
+    {
+      "id": 16,
+      "name": "Restaurant 16",
+      "shortDescription": "Description for Restaurant 16.",
+      "cuisine": "Cuisine Type",
+      "rating": 4.3,
+      "details": {
+        "id": 16,
+        "address": "16 Address St, City",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 4.3,
+        "contactEmail": "contact@restaurant16.com"
+      }
+    },
+    {
+      "id": 17,
+      "name": "Restaurant 17",
+      "shortDescription": "Description for Restaurant 17.",
+      "cuisine": "Cuisine Type",
+      "rating": 4.4,
+      "details": {
+        "id": 17,
+        "address": "17 Address St, City",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 4.4,
+        "contactEmail": "contact@restaurant17.com"
+      }
+    },
+    {
+      "id": 18,
+      "name": "Restaurant 18",
+      "shortDescription": "Description for Restaurant 18.",
+      "cuisine": "Cuisine Type",
+      "rating": 4.5,
+      "details": {
+        "id": 18,
+        "address": "18 Address St, City",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 4.5,
+        "contactEmail": "contact@restaurant18.com"
+      }
+    },
+    {
+      "id": 19,
+      "name": "Restaurant 19",
+      "shortDescription": "Description for Restaurant 19.",
+      "cuisine": "Cuisine Type",
+      "rating": 4.6,
+      "details": {
+        "id": 19,
+        "address": "19 Address St, City",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 4.6,
+        "contactEmail": "contact@restaurant19.com"
+      }
+    },
+    {
+      "id": 20,
+      "name": "Restaurant 20",
+      "shortDescription": "Description for Restaurant 20.",
+      "cuisine": "Cuisine Type",
+      "rating": 4.7,
+      "details": {
+        "id": 20,
+        "address": "20 Address St, City",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 4.7,
+        "contactEmail": "contact@restaurant20.com"
+      }
+    },
+    {
+      "id": 21,
+      "name": "Restaurant 21",
+      "shortDescription": "Description for Restaurant 21.",
+      "cuisine": "Cuisine Type",
+      "rating": 4.8,
+      "details": {
+        "id": 21,
+        "address": "21 Address St, City",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 4.8,
+        "contactEmail": "contact@restaurant21.com"
+      }
+    },
+    {
+      "id": 22,
+      "name": "Restaurant 22",
+      "shortDescription": "Famous for its twist on the classic Negroni.",
+      "cuisine": "Cuisine Type",
+      "rating": 4.9,
+      "details": {
+        "id": 22,
+        "address": "22 Address St, City",
+        "openingHours": {
+          "weekday": "12:00 PM - 10:00 PM",
+          "weekend": "11:00 AM - 11:00 PM"
+        },
+        "reviewScore": 4.9,
+        "contactEmail": "contact@restaurant22.com"
+      }
+    }
+  ],
+  "bookings": []
+}

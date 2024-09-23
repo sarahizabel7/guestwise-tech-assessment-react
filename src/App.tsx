@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import { Col, Container, Row } from "react-bootstrap";
+import RestaurantList from "./components/RestaurantList";
+import RestaurantDetails from "./components/RestaurantDetails";
+import BookTable from "./components/BookTable";
 
 function App() {
+  const [selectedRestaurantId, setSelectedRestaurantId] = useState<
+    number | null
+  >(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Row>
+        <Col md={4}>
+          <RestaurantList onRestaurantSelect={setSelectedRestaurantId} />
+        </Col>
+        <Col md={8}>
+          {selectedRestaurantId && (
+            <>
+              <RestaurantDetails restaurantId={selectedRestaurantId} />
+              <BookTable />
+            </>
+          )}
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
