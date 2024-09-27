@@ -1,44 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Card, Container } from "react-bootstrap";
-import { getRestaurantDetails } from "../services/api";
+import { useRestaurantDetails } from "../hooks";
 
 type RestaurantDetailsProps = {
   restaurantId: number;
 };
 
-type RestaurantDetailsData = {
-  address: string;
-  openingHours: {
-    weekday: string;
-    weekend: string;
-  };
-  reviewScore: number;
-  contactEmail: string;
-};
-
 const RestaurantDetails: React.FC<RestaurantDetailsProps> = ({
   restaurantId,
 }) => {
-  if (!restaurantId) return null;
+  const { restaurantDetails } = useRestaurantDetails(restaurantId);
 
-  const details = {
-    address: "123 Fine St, London",
-    openingHours: {
-      weekday: "12:00 PM - 10:00 PM",
-      weekend: "11:00 AM - 11:00 PM",
-    },
-    reviewScore: 4.7,
-    contactEmail: "info@velvetandvine.co.uk",
-  };
+  if (!restaurantId || !restaurantDetails) return null;
+
+  const { address, reviewScore, contactEmail } = restaurantDetails;
 
   return (
     <Container>
       <Card>
         <Card.Body>
           <Card.Title>Restaurant Details</Card.Title>
-          <Card.Text>Address: {details.address}</Card.Text>
-          <Card.Text>Review Score: {details.reviewScore}</Card.Text>
-          <Card.Text>Contact: {details.contactEmail}</Card.Text>
+          <Card.Text>Address: {address}</Card.Text>
+          <Card.Text>Review Score: {reviewScore}</Card.Text>
+          <Card.Text>Contact: {contactEmail}</Card.Text>
         </Card.Body>
       </Card>
     </Container>
