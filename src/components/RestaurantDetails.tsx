@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Container } from "react-bootstrap";
+import { Card, Container, ListGroup, ListGroupItem } from "react-bootstrap";
 import { useRestaurantDetails } from "../hooks";
 
 type RestaurantDetailsProps = {
@@ -13,7 +13,8 @@ const RestaurantDetails: React.FC<RestaurantDetailsProps> = ({
 
   if (!restaurantId || !restaurantDetails) return null;
 
-  const { address, reviewScore, contactEmail } = restaurantDetails;
+  const { address, reviewScore, contactEmail, openingHours } =
+    restaurantDetails;
 
   return (
     <Container>
@@ -23,6 +24,12 @@ const RestaurantDetails: React.FC<RestaurantDetailsProps> = ({
           <Card.Text>Address: {address}</Card.Text>
           <Card.Text>Review Score: {reviewScore}</Card.Text>
           <Card.Text>Contact: {contactEmail}</Card.Text>
+          <Card.Text>Opening Hours:</Card.Text>
+
+          <ListGroup>
+            <ListGroupItem>Weekday: {openingHours.weekday}</ListGroupItem>
+            <ListGroupItem>Weekend: {openingHours.weekend}</ListGroupItem>
+          </ListGroup>
         </Card.Body>
       </Card>
     </Container>
