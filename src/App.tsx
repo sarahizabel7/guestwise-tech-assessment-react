@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Stack } from "react-bootstrap";
 import RestaurantList from "./components/RestaurantList";
 import RestaurantDetails from "./components/RestaurantDetails";
 import BookTable from "./components/BookTable";
@@ -19,10 +19,10 @@ function App() {
         </Col>
         <Col md={8}>
           {selectedRestaurantId && (
-            <>
+            <Stack gap={4}>
               <RestaurantDetails restaurantId={selectedRestaurantId} />
               <BookTable restaurantId={selectedRestaurantId} />
-            </>
+            </Stack>
           )}
         </Col>
       </Row>
