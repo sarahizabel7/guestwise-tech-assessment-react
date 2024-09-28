@@ -1,27 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container } from "react-bootstrap";
+import { useBookTable } from "../hooks/useBookTable";
+import { Booking } from "../types";
 
-const BookTable: React.FC = ({}) => {
+type BookTableProps = {
+  restaurantId: number;
+};
+
+const BookTable: React.FC<BookTableProps> = ({ restaurantId }) => {
+  const { bookTable, hasError, loading } = useBookTable();
+
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    try {
-      const response = await fetch("http://localhost:3001/bookings", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({}),
-      });
 
-      if (!response.ok) throw new Error("Booking failed");
+    // TODO: Get data from form
+    const booking: Booking = {
+      name: "John Doe",
+      email: "john@gmail.com",
+      phone: "+3457234654",
+      date: "2021-10-10",
+      time: "12:00",
+      numberOfguests: 2,
+      restaurantId,
+    };
 
-      console.log("Booking successful");
-    } catch (err) {
-      console.log(err);
-    } finally {
-      console.log("Completed request");
-    }
+    bookTable(booking);
   };
+
+  // TODO: Add an alert if booking fails
+  useEffect(() => {
+    if (hasError) {
+      alert("Booking failed");
+    }
+  }, [hasError]);
 
   return (
     <Container>
@@ -45,7 +56,9 @@ const BookTable: React.FC = ({}) => {
         <label htmlFor="guests">Guests</label>
         <input type="number" id="guests" name="guests" />
         <br />
-        <button type="submit">Book</button>
+        <button type="submit" disabled={loading}>
+          Book
+        </button>
       </form>
     </Container>
   );
