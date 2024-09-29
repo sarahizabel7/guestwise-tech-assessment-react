@@ -82,7 +82,6 @@ const BookTable: React.FC<BookTableProps> = ({ restaurant }) => {
       setAlertMessage({ ...successAlertMessage, show: true });
       resetForm();
     } catch (error) {
-      console.error(error);
       setAlertMessage({ ...errorAlertMessage, show: true });
     } finally {
       setSubmitting(false);
