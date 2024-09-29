@@ -387,24 +387,14 @@
       "restaurantId": "2"
     },
     {
-      "id": "8ad7",
+      "id": "35a7",
       "name": "sarah",
       "email": "sarah@gmail.com",
-      "phone": "+3519120129323",
+      "phone": "+35193434893",
       "date": "2024-09-29",
-      "time": "20:29",
-      "numberOfguests": 2,
-      "restaurantId": "1"
-    },
-    {
-      "id": "19e0",
-      "name": "haushd",
-      "email": "asdas@sadff",
-      "phone": "234234234",
-      "date": "2024-09-28",
-      "time": "20:31",
-      "numberOfguests": 2,
-      "restaurantId": "2"
+      "time": "18:05",
+      "numberOfguests": 12,
+      "restaurantId": "20"
     }
   ]
 }

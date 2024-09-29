@@ -1,30 +1,34 @@
 import React from "react";
 import { Card, Stack, ListGroup, ListGroupItem } from "react-bootstrap";
-import { useRestaurantDetails } from "../hooks";
+import { Restaurant } from "../../types";
 
 type RestaurantDetailsProps = {
-  restaurantId: number;
+  restaurant: Restaurant;
 };
 
 const RestaurantDetails: React.FC<RestaurantDetailsProps> = ({
-  restaurantId,
+  restaurant,
 }) => {
-  const { restaurantDetails } = useRestaurantDetails(restaurantId);
-
-  if (!restaurantId || !restaurantDetails) return null;
-
   const { address, reviewScore, contactEmail, openingHours } =
-    restaurantDetails;
+    restaurant.details;
 
   return (
     <Stack>
       <Card>
         <Card.Body>
-          <Card.Title>Restaurant Details</Card.Title>
-          <Card.Text>Address: {address}</Card.Text>
-          <Card.Text>Review Score: {reviewScore}</Card.Text>
-          <Card.Text>Contact: {contactEmail}</Card.Text>
-          <Card.Text>Opening Hours:</Card.Text>
+          <Card.Title>{restaurant.name}</Card.Title>
+          <Card.Text>
+            📍 <b>Address:</b> {address}
+          </Card.Text>
+          <Card.Text>
+            ⭐️ <b>Review Score:</b> {reviewScore}
+          </Card.Text>
+          <Card.Text>
+            📩 <b>Contact:</b> {contactEmail}
+          </Card.Text>
+          <Card.Text>
+            🕑 <b>Opening Hours:</b>
+          </Card.Text>
 
           <ListGroup>
             <ListGroupItem>Weekday: {openingHours.weekday}</ListGroupItem>
@@ -36,4 +40,4 @@ const RestaurantDetails: React.FC<RestaurantDetailsProps> = ({
   );
 };
 
-export default RestaurantDetails;
+export { RestaurantDetails };

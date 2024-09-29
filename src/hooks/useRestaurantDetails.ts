@@ -1,23 +1,12 @@
-import { useEffect, useState } from "react";
 import { getRestaurantDetails } from "../services/api";
-import { RestaurantDetailsData } from "../types";
 
-const useRestaurantDetails = (restaurantId?: number) => {
-  const [restaurantDetails, setRestaurantDetails] =
-    useState<RestaurantDetailsData>();
+const useRestaurantDetails = () => {
+  const fetchRestaurantDetails = async (restaurantId: number) => {
+    const response = await getRestaurantDetails(restaurantId);
+    return response.details;
+  };
 
-  useEffect(() => {
-    if (!restaurantId) return;
-
-    const fetchRestaurantDetails = async () => {
-      const response = await getRestaurantDetails(restaurantId);
-      setRestaurantDetails(response.details);
-    };
-
-    fetchRestaurantDetails();
-  }, [restaurantId]);
-
-  return { restaurantDetails };
+  return { fetchRestaurantDetails };
 };
 
 export { useRestaurantDetails };
