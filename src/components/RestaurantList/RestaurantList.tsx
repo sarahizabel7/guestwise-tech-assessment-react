@@ -51,6 +51,7 @@ const RestaurantList: React.FC<RestaurantListProps> = ({
 
           <Col>
             <Form.Check
+              data-testid="rating-radio"
               type="radio"
               label="Rating"
               onChange={() => onSortChange("rating")}
@@ -59,6 +60,7 @@ const RestaurantList: React.FC<RestaurantListProps> = ({
           </Col>
           <Col>
             <Form.Check
+              data-testid="name-radio"
               type="radio"
               onChange={() => onSortChange("name")}
               checked={sortedBy === "name"}
@@ -71,6 +73,7 @@ const RestaurantList: React.FC<RestaurantListProps> = ({
         {filteredList.length
           ? filteredList.map((restaurant) => (
               <ListGroup.Item
+                data-testid="restaurant-list-item"
                 key={restaurant.id}
                 action
                 onClick={() => onRestaurantSelect(restaurant)}
@@ -79,7 +82,7 @@ const RestaurantList: React.FC<RestaurantListProps> = ({
                 <p>{restaurant.shortDescription}</p>
               </ListGroup.Item>
             ))
-          : "No restaurants found"}
+          : "No restaurants found."}
       </ListGroup>
     </Stack>
   );

@@ -11,8 +11,8 @@ import {
 import { useBookTable } from "../../hooks";
 import { Booking, Restaurant } from "../../types";
 import { useFormik, FormikHelpers } from "formik";
-import * as yup from "yup";
-import { addHours, format, differenceInHours } from "date-fns";
+import { format } from "date-fns";
+import { getFormSchema } from "./formSchema";
 
 type BookTableProps = {
   restaurant: Restaurant;
@@ -51,39 +51,7 @@ const BookTable: React.FC<BookTableProps> = ({ restaurant }) => {
   const [alertMessage, setAlertMessage] =
     useState<AlertMessage>(successAlertMessage);
 
-  // TODO: schema can be in a separate file
-  const schema = yup.object().shape({
-    name: yup.string().required(),
-    email: yup.string().email().required(),
-    phone: yup.string().required(),
-    date: yup.string().required(),
-    time: yup
-      .string()
-      .required("Time is required")
-      .test(
-        "is-at-least-one-hour-ahead",
-        "Please select a time that is at least 1 hour from now.",
-        function (value) {
-          const { date } = this.parent;
-          if (!value || !date) return false;
-
-          const selectedDateTime = new Date(`${date}T${value}`);
-          const oneHourLaterFromNow = addHours(new Date(), 1);
-
-          return differenceInHours(selectedDateTime, oneHourLaterFromNow) >= 0; // Validate if selected time is at least 1 hour ahead
-        }
-      ),
-    guests: yup
-      .number()
-      .required()
-      .positive()
-      .integer()
-      .max(
-        12,
-        `Maximum 12 guests allowed. For larger groups, contact the restaurant at ${restaurant?.details.contactEmail}.`
-      )
-      .min(1, "Please select at least 1 guest to proceed with your booking."),
-  });
+  const schema = getFormSchema(restaurant.details);
 
   const initialValues: FormValues = {
     name: "",
@@ -131,10 +99,15 @@ const BookTable: React.FC<BookTableProps> = ({ restaurant }) => {
     <Stack gap={2}>
       <h2>Book a Table</h2>
 
-      <Form noValidate onSubmit={formik.handleSubmit}>
+      <Form
+        noValidate
+        onSubmit={formik.handleSubmit}
+        data-testid="book-table-form"
+      >
         <FormGroup className="mb-3">
-          <FormLabel>Name</FormLabel>
+          <FormLabel data-testid="book-name-label">Name</FormLabel>
           <FormControl
+            data-testid="book-name-input"
             type="text"
             id="name"
             name="name"
@@ -147,8 +120,9 @@ const BookTable: React.FC<BookTableProps> = ({ restaurant }) => {
           />
         </FormGroup>
         <FormGroup className="mb-3">
-          <FormLabel>Email</FormLabel>
+          <FormLabel data-testid="book-email-label">Email</FormLabel>
           <FormControl
+            data-testid="book-email-input"
             type="email"
             id="email"
             name="email"
@@ -161,8 +135,9 @@ const BookTable: React.FC<BookTableProps> = ({ restaurant }) => {
           />
         </FormGroup>
         <FormGroup className="mb-3">
-          <FormLabel>Phone</FormLabel>
+          <FormLabel data-testid="book-phone-label">Phone</FormLabel>
           <FormControl
+            data-testid="book-phone-input"
             type="tel"
             id="phone"
             name="phone"
@@ -175,8 +150,9 @@ const BookTable: React.FC<BookTableProps> = ({ restaurant }) => {
           />
         </FormGroup>
         <FormGroup className="mb-3">
-          <FormLabel>Date</FormLabel>
+          <FormLabel data-testid="book-date-label">Date</FormLabel>
           <FormControl
+            data-testid="book-date-input"
             type="date"
             id="date"
             name="date"
@@ -190,8 +166,9 @@ const BookTable: React.FC<BookTableProps> = ({ restaurant }) => {
           />
         </FormGroup>
         <FormGroup className="mb-3">
-          <FormLabel>Time</FormLabel>
+          <FormLabel data-testid="book-time-label">Time</FormLabel>
           <FormControl
+            data-testid="book-time-input"
             type="time"
             id="time"
             name="time"
@@ -207,8 +184,9 @@ const BookTable: React.FC<BookTableProps> = ({ restaurant }) => {
           </FormControl.Feedback>
         </FormGroup>
         <FormGroup className="mb-3">
-          <FormLabel>Guests</FormLabel>
+          <FormLabel data-testid="book-guests-label">Guests</FormLabel>
           <FormControl
+            data-testid="book-guests-input"
             type="number"
             id="guests"
             name="guests"
@@ -225,6 +203,7 @@ const BookTable: React.FC<BookTableProps> = ({ restaurant }) => {
         </FormGroup>
 
         <Button
+          data-testid="book-button"
           type="submit"
           disabled={!formik.isValid || formik.isSubmitting || !formik.dirty}
         >

@@ -4,7 +4,7 @@ type Restaurant = {
   shortDescription: string;
   cuisine: string;
   rating: number;
-  details: RestaurantDetailsData;
+  details?: RestaurantDetailsData;
 };
 
 type RestaurantDetailsData = {

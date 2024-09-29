@@ -20,10 +20,8 @@ const sortByName = (nameA: string, nameB: string) => {
   const [textA, numA] = nameA.split(" ");
   const [textB, numB] = nameB.split(" ");
 
-  // Compare the text part first
   if (textA !== textB) return textA.localeCompare(textB);
 
-  // Compare the numeric part
   return parseInt(numA) - parseInt(numB);
 };
 

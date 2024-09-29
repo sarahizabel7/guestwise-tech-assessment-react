@@ -1,6 +1,5 @@
 import { createContext, useCallback, useEffect, useState } from "react";
-import { useRestaurantDetails } from "../hooks";
-import { getRestaurants } from "../services/api";
+import { getRestaurantDetails, getRestaurants } from "../services/api";
 import { Restaurant } from "../types";
 
 type RestaurantsContextType = {
@@ -27,16 +26,14 @@ const RestaurantsProvider = ({
 
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
 
-  const { fetchRestaurantDetails } = useRestaurantDetails();
-
   const setSelectedRestaurantFn = useCallback(
     async (restaurant: Restaurant) => {
-      const details = await fetchRestaurantDetails(restaurant.id);
-      restaurant.details = details;
+      const response = await getRestaurantDetails(restaurant.id);
+      restaurant.details = response.details;
 
       setSelectedRestaurant(restaurant);
     },
-    [fetchRestaurantDetails]
+    []
   );
 
   useEffect(() => {

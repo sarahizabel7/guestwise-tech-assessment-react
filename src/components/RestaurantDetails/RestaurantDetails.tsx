@@ -16,14 +16,16 @@ const RestaurantDetails: React.FC<RestaurantDetailsProps> = ({
     <Stack>
       <Card>
         <Card.Body>
-          <Card.Title>{restaurant.name}</Card.Title>
-          <Card.Text>
+          <Card.Title data-testid="restaurant-name">
+            {restaurant.name}
+          </Card.Title>
+          <Card.Text data-testid="restaurant-address">
             📍 <b>Address:</b> {address}
           </Card.Text>
-          <Card.Text>
+          <Card.Text data-testid="restaurant-review">
             ⭐️ <b>Review Score:</b> {reviewScore}
           </Card.Text>
-          <Card.Text>
+          <Card.Text data-testid="restaurant-email">
             📩 <b>Contact:</b> {contactEmail}
           </Card.Text>
           <Card.Text>
@@ -31,8 +33,12 @@ const RestaurantDetails: React.FC<RestaurantDetailsProps> = ({
           </Card.Text>
 
           <ListGroup>
-            <ListGroupItem>Weekday: {openingHours.weekday}</ListGroupItem>
-            <ListGroupItem>Weekend: {openingHours.weekend}</ListGroupItem>
+            <ListGroupItem data-testid="restaurant-weekday-hours">
+              Weekday: {openingHours.weekday}
+            </ListGroupItem>
+            <ListGroupItem data-testid="restaurant-weekend-hours">
+              Weekend: {openingHours.weekend}
+            </ListGroupItem>
           </ListGroup>
         </Card.Body>
       </Card>
