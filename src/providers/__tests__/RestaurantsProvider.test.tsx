@@ -15,6 +15,15 @@ const mockRestaurants: Restaurant[] = [
     cuisine: "Cuisine A",
     rating: 4.5,
     shortDescription: "Description A",
+    details: {
+      contactEmail: "test@restaurant.com",
+      address: "Address A",
+      openingHours: {
+        weekday: "12:00 PM - 10:00 PM",
+        weekend: "11:00 AM - 11:00 PM",
+      },
+      reviewScore: 4.5,
+    },
   },
   {
     id: 2,
@@ -22,6 +31,15 @@ const mockRestaurants: Restaurant[] = [
     cuisine: "Cuisine B",
     rating: 4.0,
     shortDescription: "Description B",
+    details: {
+      contactEmail: "test@restaurant.com",
+      address: "Address B",
+      openingHours: {
+        weekday: "12:00 PM - 10:00 PM",
+        weekend: "11:00 AM - 11:00 PM",
+      },
+      reviewScore: 4.5,
+    },
   },
 ];
 
@@ -50,8 +68,11 @@ describe("RestaurantsProvider", () => {
     (getRestaurantDetails as jest.Mock).mockResolvedValue({
       details: {
         contactEmail: "test@restaurant.com",
-        address: "Address A",
-        openingHours: { weekday: "Weekday A", weekend: "Weekend A" },
+        address: "Address A 2",
+        openingHours: {
+          weekday: "12:00 PM - 10:00 PM",
+          weekend: "11:00 AM - 11:00 PM",
+        },
         reviewScore: 4.5,
       },
     });

@@ -1,6 +1,16 @@
 import { sortRestaurants, filterRestaurants } from "../filterRestaurants";
 import { Restaurant } from "../../types";
 
+const mockDetails = {
+  contactEmail: "test@restaurant.com",
+  address: "Address",
+  openingHours: {
+    weekday: "12:00 PM - 10:00 PM",
+    weekend: "11:00 AM - 11:00 PM",
+  },
+  reviewScore: 4.5,
+};
+
 const mockRestaurants: Restaurant[] = [
   {
     id: 1,
@@ -8,6 +18,7 @@ const mockRestaurants: Restaurant[] = [
     shortDescription: "",
     cuisine: "",
     rating: 4.5,
+    details: mockDetails,
   },
   {
     id: 2,
@@ -15,6 +26,7 @@ const mockRestaurants: Restaurant[] = [
     shortDescription: "",
     cuisine: "",
     rating: 4.2,
+    details: mockDetails,
   },
   {
     id: 3,
@@ -22,6 +34,7 @@ const mockRestaurants: Restaurant[] = [
     shortDescription: "",
     cuisine: "",
     rating: 4.8,
+    details: mockDetails,
   },
   {
     id: 4,
@@ -29,6 +42,7 @@ const mockRestaurants: Restaurant[] = [
     shortDescription: "",
     cuisine: "",
     rating: 4.6,
+    details: mockDetails,
   },
 ];
 
@@ -75,6 +89,7 @@ describe("sortRestaurants", () => {
         shortDescription: "",
         cuisine: "",
         rating: 4.8,
+        details: mockDetails,
       },
       {
         id: 4,
@@ -82,6 +97,7 @@ describe("sortRestaurants", () => {
         shortDescription: "",
         cuisine: "",
         rating: 4.6,
+        details: mockDetails,
       },
       {
         id: 1,
@@ -89,6 +105,7 @@ describe("sortRestaurants", () => {
         shortDescription: "",
         cuisine: "",
         rating: 4.5,
+        details: mockDetails,
       },
       {
         id: 2,
@@ -96,6 +113,7 @@ describe("sortRestaurants", () => {
         shortDescription: "",
         cuisine: "",
         rating: 4.2,
+        details: mockDetails,
       },
     ]);
   });
@@ -109,6 +127,7 @@ describe("sortRestaurants", () => {
         shortDescription: "",
         cuisine: "",
         rating: 4.2,
+        details: mockDetails,
       },
       {
         id: 1,
@@ -116,6 +135,7 @@ describe("sortRestaurants", () => {
         shortDescription: "",
         cuisine: "",
         rating: 4.5,
+        details: mockDetails,
       },
       {
         id: 3,
@@ -123,6 +143,7 @@ describe("sortRestaurants", () => {
         shortDescription: "",
         cuisine: "",
         rating: 4.8,
+        details: mockDetails,
       },
       {
         id: 4,
@@ -130,6 +151,7 @@ describe("sortRestaurants", () => {
         shortDescription: "",
         cuisine: "",
         rating: 4.6,
+        details: mockDetails,
       },
     ]);
   });
